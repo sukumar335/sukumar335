@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+{% comment %} <div class="container text-center" style="padding: 100px; padding-bottom: 0px margin-top: 230px; margin-bottom: 0px justify-content: center; align-items: center; width: 800px; height: 400px;"> {% endcomment %}
+<div class="container col-md-3 text-center" style="align-items: center; justify-content: center; ">
+    {% comment %} <h1 class="my-5" style="font-size: 3em;">Upload an image to Convert !!!</h1>
+    <form method="POST" enctype="multipart/form-data"> {% csrf_token %}
+        <div class="input-group">
+            <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+            <button class="btn btn-outline-secondary" type="submit" id="inputGroupFileAddon04">Button</button>
+        </div>
+    </form> {% endcomment %}
+    
+    <h1 class="my-5" style="font-size: 3em;">Upload an image to Convert !!!</h1>
+    <form action="./" method="POST" enctype="multipart/form-data" class="row row-cols-lg-auto align-items-center"> {% csrf_token %}
+            {{ form.photo.label_tag }}
+            {{ form.photo|as_crispy_field }}
+            <button type="submit" class="btn btn-primary">Recognize</button>
+    </form>
+
+
+</div>
+{% endblock content %}

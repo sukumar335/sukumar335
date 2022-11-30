@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="my-5 container col-md-3 text-center" style="align-items: center; justify-content: center; ">
+    <h1>Value: {{ val }}</h1>
+    <h1>Accuracy: {{ acc }}</h1>
+    <a href="{% url 'app:extract-view' %}"><button class="btn btn-primary mt-3">Back</button></a>
+</div>
+{% endblock content %}
